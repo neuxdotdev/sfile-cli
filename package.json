@@ -1,0 +1,58 @@
+{
+  "name": "sfile-cli",
+  "version": "1.0.0",
+  "description": "Professional SFile Downloader CLI",
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "author": "neuxdev",
+  "homepage": "https://github.com/neuxdotdev/sfile-cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neuxdotdev/sfile-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neuxdotdev/sfile-cli/issues"
+  },
+  "keywords": [
+    "cli",
+    "downloader",
+    "sfile",
+    "playwright",
+    "automation"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "sfile-cli": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist .tsbuildinfo",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --build tsconfig.json --verbose",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "boxen": "^8.0.1",
+    "chalk": "^5.6.2",
+    "fs": "0.0.1-security",
+    "inquirer": "^13.1.0",
+    "nanospinner": "^1.2.2",
+    "path": "^0.12.7",
+    "playwright": "^1.57.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
